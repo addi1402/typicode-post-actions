@@ -8,22 +8,19 @@ import {
   Avatar,
 } from "@chakra-ui/react";
 import { LuDelete, LuEye, LuTrash2 } from "react-icons/lu";
-import Link from "next/link";
 
 export default function PostCard({ post }) {
   const { id, userId, title, body, user } = post;
   let router = useRouter();
 
+  function handleClick() {
+    router.push(`/individual/${id}/`);
+  }
+
   return (
     <Card variant="outline">
       <CardHeader className="flex gap-4 items-center">
-        <Avatar
-          name={user?.name}
-          src="https://bit.ly/broken-link"
-          size="md"
-          bg="#f4f4f5"
-          color="black"
-        />
+        <Avatar name={user?.name} src="https://bit.ly/broken-link" size="md" bg='#f4f4f5' color='black'/>
         <div>
           <h5 className="text-lg font-semibold">{user?.name}</h5>
           <p className="text-gray-500">{user?.email}</p>
@@ -53,18 +50,17 @@ export default function PostCard({ post }) {
         >
           Delete
         </Button>
-        <Link href={`/individual/${id}/`}>
-          <Button
-            leftIcon={<LuEye />}
-            size="sm"
-            className="mr-2"
-            bg="#1f2937"
-            color="white"
-            _hover={{ bg: "#374151" }}
-          >
-            View
-          </Button>
-        </Link>
+        <Button
+          leftIcon={<LuEye />}
+          size="sm"
+          className="mr-2"
+          bg="#1f2937"
+          color="white"
+          _hover={{ bg: "#374151" }}
+          onClick={handleClick}
+        >
+          View
+        </Button>
       </CardFooter>
     </Card>
   );
