@@ -31,8 +31,7 @@ export default function Page({ params }) {
             <strong>Name:</strong> {user?.name}
           </p>
           <p>
-            <strong>Address:</strong> {user?.address.street},
-            {user?.address.suite},{user?.address.city},{user?.address.zipcode}
+            <strong>Address:</strong> {user?.address.street}, {user?.address.suite}, {user?.address.city}, {user?.address.zipcode}
           </p>
           <p>
             <strong>Phone: </strong> {user?.phone}
