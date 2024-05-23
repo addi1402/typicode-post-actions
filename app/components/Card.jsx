@@ -24,6 +24,10 @@ export default function PostCard({ post }) {
     dispatch(deletePost(id));
   }
 
+  function handleEdit(){
+    router.push('/form/');
+  }
+
   return (
     <Card variant="outline">
       <CardHeader className="flex gap-4 items-center">
@@ -36,12 +40,12 @@ export default function PostCard({ post }) {
         />
         <div>
           <h5 className="text-lg font-semibold">{user?.name}</h5>
-          <p className="text-gray-500">{user?.email}</p>
+          <p className="text-slate-500">{user?.email}</p>
         </div>
       </CardHeader>
       <CardBody>
         <h3 className="font-semibold text-lg capitalize mb-2">{title}</h3>
-        <p className="text-gray-500">{body}</p>
+        <p className="text-slate-500">{body}</p>
       </CardBody>
 
       <CardFooter className="flex justify-end">
@@ -51,6 +55,7 @@ export default function PostCard({ post }) {
           className="mr-2"
           variant="outline"
           _hover={{ bg: "#f4f4f5" }}
+          onClick={handleEdit}
         >
           Edit
         </Button>

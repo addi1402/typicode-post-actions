@@ -23,7 +23,7 @@ let postSlice = createSlice({
     initialState: initialPost,
     reducers: {
         addPost: (state, action) => {
-
+          state.data = [...state.data, action.payload];
         },
         deletePost: (state, action) => {
           state.data = state.data.filter((post) => post.id !== action.payload);
