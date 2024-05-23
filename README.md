@@ -2,9 +2,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 
 ### To-Do's
-- [ ] Debug Delete Functionality (not to fetch when all the posts are deleted)
 - [ ] Add EDIT Functionality
-- [ ] Add ADD Functionality
+- [ ] Pagination
 
 #### Minor Features
 - [ ] Display a message when all posts are deleted
@@ -13,3 +12,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - [ ] Move Redux Folder out of App Router
 - [ ] Add Background Pattern
 - [x] Add Home Navigation to Logo
+
+#### Bugs
+- [ ] Deleting all posts causes a fresh batch of posts
+- [ ] After adding a set of new posts, deleting one deletes all new posts
+- [ ] ADD Functionality does not pass "user" properly
